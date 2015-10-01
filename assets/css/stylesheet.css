@@ -1,0 +1,24 @@
+img{
+	height: 20%;
+	width: 20%;
+	
+}
+
+#main {
+  margin: 0 auto;
+	width: 50%;
+	height:100%;
+	background-color: #FF5050;
+
+}
+h1{
+	color: white;
+}
+
+body{
+	background-color: #FF6666;
+}
+#img{
+	text-align: center;
+	background-color: white;
+}

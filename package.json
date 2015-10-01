@@ -1,0 +1,15 @@
+{
+  "name": "MoveMe-js",
+  "version": "1.0.0",
+  "description": "An app in js",
+  "main": "node.js",
+  "scripts": {
+    "test": "console.log('test');"
+  },
+  "author": "Krish Oza",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3"
+  }
+}

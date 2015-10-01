@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css">
+		<script>
+		$(document).ready(function(){
+			$('#button').click(function(){
+				var location = $('#location').val();				
+				$.post("http://localhost:3030/houses", {'location': location}, function(data){
+
+				});
+			});
+		});
+		</script>
+	</head>
+	<body><!-- 
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+ -->		<center>
+			<div id="main">	
+				<h1>Move Me</h1>
+				<input type="text" id="location" name="location">
+				<input type="button" name="button" value="find me houses" id="button">
+			</div>
+			<div id="output">
+			</div>
+		</center>
+	</body>
+</html>
