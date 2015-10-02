@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="html">
 	<head>
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
@@ -10,15 +10,29 @@
 			$('#button').click(function(){
 				var location = $('#location').val();				
 				$.post("http://localhost:3030/houses", {'location': location}, function(data){
-
+		      var listData = [];
+		      console.log(data.listing);
+		      data['listing'].forEach(function(item){
+		        listData.push({
+		          "numBedrooms" : item.num_bedrooms,
+		          "price" : item.price,
+		          'description' : item.description,
+		          'area' : item.county,
+		          'propertyType' : item.property_type,
+		          'address' : item.address,
+		          'lat' : item.latitude,
+		          'lng' : item.londitude
+		        });  
+		      });
+		      $('#html').html(listData);
 				});
 			});
 		});
 		</script>
 	</head>
-	<body><!-- 
-	<script type="text/javascript" src="/assets/js/app.js"></script>
- -->		<center>
+	<body>
+
+		<center>
 			<div id="main">	
 				<h1>Move Me</h1>
 				<input type="text" id="location" name="location">
