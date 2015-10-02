@@ -6,12 +6,13 @@
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css">
 		<script>
+		var x;
 		$(document).ready(function(){
 			$('#button').click(function(){
 				var location = $('#location').val();				
 				$.post("http://localhost:3030/houses", {'location': location}, function(data){
 		      var listData = [];
-		      console.log(data.listing);
+		      data = JSON.parse(data);
 		      data['listing'].forEach(function(item){
 		        listData.push({
 		          "numBedrooms" : item.num_bedrooms,
@@ -24,7 +25,10 @@
 		          'lng' : item.londitude
 		        });  
 		      });
-		      $('#html').html(listData);
+		      $('#html').empty();
+		      listData.forEach(function(item) {
+		      	$('#html').append('<b>Num of Bedrooms:' + item.numBedrooms + '</b><br>' + item.description + '<br><br>')
+		      });
 				});
 			});
 		});
